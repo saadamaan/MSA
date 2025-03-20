@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="styles.css"> 
 
   <style>
     * {
@@ -231,6 +232,75 @@ nav ul li a {
   .rating {
     font-size: 18px;
   }
+  @media (max-width: 768px) {
+   nav {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+   }
+
+   nav ul {
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+   }
+
+   nav ul li {
+      margin: 5px 0;
+   }
+}
+/* Hide menu by default on small screens */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+  }
+
+  nav ul {
+    display: none; /* Hide menu initially */
+    flex-direction: column;
+    background: rgba(0, 124, 240, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  nav ul li {
+    padding: 10px;
+  }
+
+  nav ul li a {
+    color: white;
+    display: block;
+    width: 100%;
+  }
+
+  /* Show menu when active */
+  nav ul.active {
+    display: flex;
+  }
+}
+
+/* Hide the menu-toggle icon for larger screens */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+
 }
 
 
@@ -242,16 +312,19 @@ nav ul li a {
     <div class="logo">
       <img src="image/logo.jpeg" alt="Logo">
     </div>
-    <ul>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul id="nav-menu">
       <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
       <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
       <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
       <li><a href="testimonial.html"><i class="fas fa-comments"></i> Testimonials</a></li>
       <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-      <li> <a href="https://www.instagram.com/mohd_saad_amaan" target="_blank" > <i class="fab fa-instagram"></i>
-     </a></li>
+      <li><a href="https://www.instagram.com/mohd_saad_amaan" target="_blank"><i class="fab fa-instagram"></i></a></li>
     </ul>
   </nav>
+  
 
   <header>
     <h1>Testimonials</h1>
@@ -261,7 +334,7 @@ nav ul li a {
   <section class="testimonials">
     <div class="testimonial" data-aos="fade-up">
       <p>"MSA's dedication and attention to detail are unmatched. Highly recommend their services!"</p>
-      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <div class="rating">⭐⭐⭐⭐</div>
       <h3>- Ayesha Khan</h3>
     </div>
     <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
@@ -322,7 +395,7 @@ nav ul li a {
   </section>
   
 
-  <!-- WhatsApp Floating Button -->
+ <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/918700661340" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
@@ -333,11 +406,12 @@ nav ul li a {
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
+    AOS.init({ duration: 1000, once: true });
+    
+  function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("active");
+  }
 
+  </script>
 </body>
 </html>
