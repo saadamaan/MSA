@@ -192,42 +192,38 @@ nav .logo img:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 @media only screen and (min-width: 340px) and (max-width: 470px) {
-  /* Navigation Bar */
  /* Navigation Bar */
-  nav {
-    padding: 5px 15px;
+nav {
+    display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 5px;
+    width: 100%;
+}
+nav .logo img {
+      height: 25px; /* Ensures a proper size */
+      width: 25px;  /* Keeps it square */
+      border-radius: 50%; /* Makes it circular */
+      object-fit: cover; /* Ensures proper fitting */
   }
-
-  nav .logo img {
-    height: 40px; /* Adjust logo size */
-    width: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  nav ul {
+nav ul {
+    display: flex;
     flex-direction: row;
+    list-style: none;
     padding: 0;
-  }
+    margin: 0;
+}
 
-  nav ul li {
-    margin-left: 8px;
-  }
-
-  nav ul li a {
-    font-size: 10px; /* Reduce menu font */
-    padding: 4px 8px;
-  }
-
+nav ul li {
+    margin: 0 3px;
+}
 
 nav ul li a {
     font-size: 7px; /* Smaller font size */
     padding: 3px;
     text-decoration: none;
 }
-
-
   /* Header */
   header {
     padding: 60px 25px 30px;
