@@ -371,6 +371,9 @@ header {
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
+  function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("active");
+  }
   AOS.init();
 
   document.getElementById('whatsappLink').addEventListener('click', function(event) {
