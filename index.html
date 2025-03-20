@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600&display=swap" rel="stylesheet">
     <!-- Font Awesome (place this in <head>) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="styles.css"> 
   <style>
     * {
       margin: 0;
@@ -364,24 +365,96 @@ section.features {
     font-size: 25px;
 }
 
-} /* Closing brace was fine, just remove ". fic this" */
+} @media (max-width: 768px) {
+   nav {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+   }
+
+   nav ul {
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+   }
+
+   nav ul li {
+      margin: 5px 0;
+   }
+   /* Hide menu by default on small screens */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+  }
+
+  nav ul {
+    display: none; /* Hide menu initially */
+    flex-direction: column;
+    background: rgba(0, 124, 240, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  nav ul li {
+    padding: 10px;
+  }
+
+  nav ul li a {
+    color: white;
+    display: block;
+    width: 100%;
+  }
+
+  /* Show menu when active */
+  nav ul.active {
+    display: flex;
+  }
+}
+
+/* Hide the menu-toggle icon for larger screens */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+}
+/* Closing brace was fine, just remove ". fic this" */
 
   </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">
-          <img src="image/logo.jpeg" alt="Logo">
-        </div>
-        <ul>
-          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-          <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
-          <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
-          <li><a href="testimonial.html"><i class="fas fa-comments"></i> Testimonials</a></li>
-          <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-          <li> <a href="https://www.instagram.com/mohd_saad_amaan" target="_blank" ><i class="fab fa-instagram"></i></a></li>
-        </ul>
-      </nav>
+  <nav>
+    <div class="logo">
+      <img src="image/logo.jpeg" alt="Logo">
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul id="nav-menu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+      <li><a href="testimonial.html"><i class="fas fa-comments"></i> Testimonials</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li><a href="https://www.instagram.com/mohd_saad_amaan" target="_blank"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+  </nav>
+  
       
       <section class="Main">
         <div class="hero-background"></div>
@@ -519,6 +592,10 @@ section.features {
     }
   });
 });
+  function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("active");
+  }
+
 
   </script>
   
