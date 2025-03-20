@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials - MSA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Asap', sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
+      background: #f4f4f9;
+      color: #222;
+      line-height: 1.8;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, #007cf0, #00dfd8);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  height: 60px; /* Adjust size */
+  width: 60px;
+  border-radius: 50%; /* Makes it circular */
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* LOGO ANIMATION (Hover Effect) */
+nav .logo img:hover {
+  transform: rotate(360deg) scale(1.1);
+}
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    nav ul li {
+      margin-left: 25px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #000;
+    }
+    header {
+      padding: 120px 20px 60px;
+      text-align: center;
+      background: #fff;
+    }
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    header p {
+      font-size: 20px;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    section.testimonials {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .testimonial {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .testimonial:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+    .testimonial p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 15px;
+    }
+    .testimonial h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #007cf0;
+    }
+    footer {
+      background: #222;
+      padding: 30px;
+      text-align: center;
+      color: #fff;
+      margin-top: 60px;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      transition: all 0.3s ease-in-out;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.15);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .rating {
+  font-size: 20px;
+  color: #FFD700; /* Gold color */
+  margin-bottom: 8px;
+}
+@media only screen and (min-width: 220px) and (max-width: 370px) {
+  /* Navigation Bar */
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 5px;
+    width: 100%;
+}
+nav .logo img {
+      height: 25px; /* Ensures a proper size */
+      width: 25px;  /* Keeps it square */
+      border-radius: 50%; /* Makes it circular */
+      object-fit: cover; /* Ensures proper fitting */
+  }
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 3px;
+}
+
+nav ul li a {
+    font-size: 7px; /* Smaller font size */
+    padding: 3px;
+    text-decoration: none;
+}
+  /* Header */
+  header {
+    padding: 100px 15px 40px;
+  }
+  header h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+  header p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  /* Testimonials Section */
+  section.testimonials {
+    padding: 40px 10px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .testimonial {
+    padding: 15px;
+    border-radius: 10px;
+  }
+  .testimonial p {
+    font-size: 16px;
+  }
+  .testimonial h3 {
+    font-size: 18px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 20px;
+    font-size: 12px;
+  }
+
+  /* WhatsApp Floating Button */
+  .whatsapp-float {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  /* Rating Stars */
+  .rating {
+    font-size: 18px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="image/logo.jpeg" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+      <li><a href="testimonial.html"><i class="fas fa-comments"></i> Testimonials</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li> <a href="https://www.instagram.com/mohd_saad_amaan" target="_blank" > <i class="fab fa-instagram"></i>
+     </a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Testimonials</h1>
+    <p>Hear what our valued clients have to say about working with MSA!</p>
+  </header>
+
+  <section class="testimonials">
+    <div class="testimonial" data-aos="fade-up">
+      <p>"MSA's dedication and attention to detail are unmatched. Highly recommend their services!"</p>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <h3>- Ayesha Khan</h3>
+    </div>
+    <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+      <p>"Professional, reliable, and very responsive. I will definitely work with MSA again."</p>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <h3>- Rahul Verma</h3>
+    </div>
+    <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+      <p>"From start to finish, the process was smooth, and the quality was top-notch."</p>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <h3>- Priya Sharma</h3>
+    </div>
+    <div class="testimonial" data-aos="fade-up" data-aos-delay="300">
+      <p>"It's rare to find someone as committed as MSA. Fantastic work!"</p>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <h3>- Mohit Gupta</h3>
+    </div>
+    <div class="testimonial" data-aos="fade-up" data-aos-delay="400">
+      <p>"Great experience! MSA handled everything with professionalism and skill."</p>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <h3>- Aslam khan</h3>
+    </div>
+    <div class="testimonial" data-aos="fade-up" data-aos-delay="500">
+      <p>"Their creativity and vision turned our ideas into reality. Truly impressive!"</p>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <h3>- Aman Ali</h3>
+    </div>
+    <div class="testimonial" data-aos="fade-up" data-aos-delay="600">
+      <p>"Quick, efficient, and top-quality work. I can't recommend MSA enough!"</p>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <h3>- Riya Mehta</h3>
+    </div>
+    <div class="testimonial" data-aos="fade-up" data-aos-delay="700">
+      <p>"MSA is my go-to for all projects now. Their service is unbeatable."</p>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <h3>- Karan Singh</h3>
+    </div>
+    <div class="testimonial" data-aos="fade-up">
+      <p>"MSA's dedication and attention to detail are unmatched. Highly recommend their services!"</p>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <h3>- Waniya khan</h3>
+    </div>
+    <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+      <p>"Professional, reliable, and very responsive. I will definitely work with MSA again."</p>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <h3>- Mohd Irfan </h3>
+    </div>
+    <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+      <p>"From start to finish, the process was smooth, and the quality was top-notch."</p>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <h3>- Surbhi Sharma</h3>
+    </div>
+    <div class="testimonial" data-aos="fade-up" data-aos-delay="300">
+      <p>"It's rare to find someone as committed as MSA. Fantastic work!"</p>
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <h3>- Javed Akram</h3>
+    </div>
+  </section>
+  
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/918700661340" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    &copy; 2025 MSA | Designed and Managed by MD Saad Amaan | All Rights Reserved
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+</body>
+</html>

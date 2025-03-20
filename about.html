@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About MSA - Your One-Person Solution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!-- AOS (Animate On Scroll) Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Asap', sans-serif;
+      scroll-behavior: smooth;
+    }
+    body {
+      background: #f4f4f9;
+      color: #222;
+      line-height: 1.8;
+      transition: all 0.5s ease;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, #007cf0, #00dfd8);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      animation: slideDown 1s ease forwards;
+    }
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  height: 60px; /* Adjust size */
+  width: 60px;
+  border-radius: 50%; /* Makes it circular */
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* LOGO ANIMATION (Hover Effect) */
+nav .logo img:hover {
+  transform: rotate(360deg) scale(1.1);
+}
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    nav ul li {
+      margin-left: 25px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #000;
+    }
+    nav ul li a i {
+      margin-right: 8px;
+    }
+
+    header {
+      padding: 120px 20px 60px;
+      text-align: center;
+      background: #fff;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      transition: color 0.3s ease;
+    }
+    header h1:hover {
+      color: #007cf0;
+    }
+    header p {
+      font-size: 20px;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section.about-content {
+      padding: 60px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      background: #f0f8ff;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 1s;
+    }
+    .about-text, .about-image {
+      flex: 1 1 500px;
+      max-width: 600px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .about-text:hover, .about-image:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+    .about-text h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+    .about-image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .about-image img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #222;
+      padding: 30px;
+      text-align: center;
+      color: #fff;
+      margin-top: 60px;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 1.5s;
+    }
+   /* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+.whatsapp-float:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+@media only screen and (min-width: 220px) and (max-width: 370px) {
+  /* Navigation Bar */
+ /* Navigation Bar */
+  nav {
+    padding: 5px 15px;
+    flex-direction: row;
+  }
+
+  nav .logo img {
+    height: 40px; /* Adjust logo size */
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  nav ul {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin-left: 8px;
+  }
+
+  nav ul li a {
+    font-size: 10px; /* Reduce menu font */
+    padding: 4px 8px;
+  }
+
+
+nav ul li a {
+    font-size: 7px; /* Smaller font size */
+    padding: 3px;
+    text-decoration: none;
+}
+
+
+  /* Header */
+  header {
+    padding: 60px 25px 30px;
+  }
+  header h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 1.4;
+  }
+  header p {
+    font-size: 10px;
+    text-align: justify;
+    padding: 0 5px;
+    line-height: 1.6;
+  }
+
+  /* About Section */
+  section.about-content {
+    padding: 20px 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-text, .about-image {
+    flex: 1 1 auto;
+    max-width: 100%;
+    padding: 5px;
+  }
+  .about-text h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .about-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify;
+    padding: 0 10px;
+  }
+  .about-image img {
+    width: 90%;
+    border-radius: 8px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 20px 10px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  /* WhatsApp Floating Button */
+  .whatsapp-float {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="image/logo.jpeg" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+      <li><a href="testimonial.html"><i class="fas fa-comments"></i> Testimonials</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li><a href="https://www.instagram.com/mohd_saad_amaan" target="_blank" ><i class="fab fa-instagram"></i></a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>About MSA</h1>
+    <p>Dedicated, reliable, and skilled — I am a one-person team providing professional services both online and offline.</p>
+  </header>
+
+  <section class="about-content">
+    <div class="about-text">
+      <h2>Who I Am</h2>
+      <p>
+        Welcome to MSA! My name is MD Saad Amaan, and I am the sole person behind MSA. I specialize in delivering personalized and high-quality services that meet the needs of individuals and businesses alike. Unlike large companies with complicated processes, I handle every project personally to ensure perfection and satisfaction.
+      </p>
+      <h2>How I Work</h2>
+      <p>
+        I operate both online and offline, offering flexible solutions according to your requirements. Whether you need remote assistance, online consultation, or in-person support, I am available to serve you in the most efficient and professional manner.
+      </p>
+      <h2>My Mission</h2>
+      <p>
+        My mission is to simplify technology and services for everyone. I believe in honest work, dedication, and building long-term relationships with my clients. I aim to be your trusted partner, providing seamless solutions that help you grow.
+      </p>
+      <h2>What Makes Me Different?</h2>
+      <p>
+        ✅ Personalized Attention — You work directly with me.<br>
+        ✅ Flexible Services — Online and offline support.<br>
+        ✅ Reliable Delivery — I handle all tasks with care and accuracy.<br>
+        ✅ Affordable Solutions — Quality work at fair prices.<br>
+        ✅ Multi-Skilled — From IT support to creative designs.
+      </p>
+      <h2>My Commitment</h2>
+      <p>
+        I believe that when you trust someone with your work, they should give it their best. That’s exactly what I promise — dedication, attention to detail, and customer satisfaction. My goal is to offer you peace of mind, knowing your tasks are in safe hands.
+      </p>
+      <h2>Connect With Me</h2>
+      <p>
+        Whether you're looking for a one-time service or a long-term working relationship, I am here to help. Let's build something great together.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="image/logo.jpeg" alt="About MSA">
+    </div>
+  </section>
+
+  <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/918700661340" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+
+  <footer>
+    &copy; 2025 MSA | Designed and Managed by MD Saad Amaan | All Rights Reserved
+  </footer>
+
+</body>
+</html>

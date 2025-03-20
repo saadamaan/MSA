@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MSA – Our Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Asap', sans-serif;
+    }
+    body {
+      background: #f4f4f9;
+      color: #222;
+      line-height: 1.6;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, #007cf0, #00dfd8);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  height: 60px; /* Adjust size */
+  width: 60px;
+  border-radius: 50%; /* Makes it circular */
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* LOGO ANIMATION (Hover Effect) */
+nav .logo img:hover {
+  transform: rotate(360deg) scale(1.1);
+}
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin-left: 25px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #000;
+    }
+    nav ul li a i {
+      margin-right: 8px;
+    }
+    nav ul li a span {
+      vertical-align: middle;
+    }
+
+    /* Section for Services */
+    section.services {
+      padding: 80px 20px;
+      text-align: center;
+      background: #fff;
+    }
+    section.services h3 {
+      font-size: 42px;
+      margin-bottom: 60px;
+    }
+    .service-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+    .service-item {
+      background: linear-gradient(135deg, #f0f4ff, #d9e4ff);
+      padding: 30px;
+      border-radius: 25px;
+      max-width: 300px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      text-align: center;
+    }
+    .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    .service-item i {
+      font-size: 40px;
+      color: #007cf0;
+      margin-bottom: 15px;
+    }
+    .service-item h4 {
+      font-size: 22px;
+      margin: 15px 0 10px;
+    }
+    .service-item p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: #222;
+      padding: 30px;
+      text-align: center;
+      color: #fff;
+    }
+
+    @media only screen and (min-width: 220px) and (max-width: 370px) {
+  
+  /* General Reset */
+  * {
+    font-size: 12px; /* Reduce font size */
+  }
+
+  /* Navigation Bar */
+  nav {
+    padding: 5px 15px;
+    flex-direction: row;
+  }
+
+  nav .logo img {
+    height: 40px; /* Adjust logo size */
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  nav ul {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin-left: 8px;
+  }
+
+  nav ul li a {
+    font-size: 10px; /* Reduce menu font */
+    padding: 4px 8px;
+  }
+
+  /* Services Section */
+  section.services {
+    padding: 40px 10px;
+  }
+
+  section.services h3 {
+    font-size: 28px;
+  }
+
+  .service-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .service-item {
+    padding: 20px;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .service-item i {
+    font-size: 30px;
+  }
+
+  .service-item h4 {
+    font-size: 18px;
+  }
+
+  .service-item p {
+    font-size: 14px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 15px;
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 220px) and (max-width: 370px) {
+  
+  /* General Reset */
+  * {
+    font-size: 12px; /* Reduce font size */
+  }
+
+  /* Navigation Bar */
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 5px;
+    width: 100%;
+}
+nav .logo img {
+      height: 25px; /* Ensures a proper size */
+      width: 25px;  /* Keeps it square */
+      border-radius: 50%; /* Makes it circular */
+      object-fit: cover; /* Ensures proper fitting */
+  }
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 3px;
+}
+
+nav ul li a {
+    font-size: 7px; /* Smaller font size */
+    padding: 3px;
+    text-decoration: none;
+}
+
+  /* Services Section */
+  section.services {
+    padding: 40px 10px;
+  }
+
+  section.services h3 {
+    font-size: 28px;
+  }
+
+  .service-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .service-item {
+    padding: 20px;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .service-item i {
+    font-size: 30px;
+  }
+
+  .service-item h4 {
+    font-size: 18px;
+  }
+
+  .service-item p {
+    font-size: 14px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 15px;
+    font-size: 12px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="image/logo.jpeg" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+      <li><a href="testimonial.html"><i class="fas fa-comments"></i> Testimonials</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li> <a href="https://www.instagram.com/mohd_saad_amaan" target="_blank" ><i class="fab fa-instagram"></i></a></li>
+    </ul>
+  </nav>
+
+  <!-- Services Section -->
+  <section class="services">
+    <h3>Our Services</h3>
+    <div class="service-list">
+      <!-- Service 1 -->
+      <div class="service-item">
+        <i class="fas fa-laptop-code"></i>
+        <h4>Web Design & Development</h4>
+        <p>We create stunning websites tailored to your business needs. From design to development, we offer comprehensive web services.</p>
+      </div>
+      <!-- Service 2 -->
+      <div class="service-item">
+        <i class="fas fa-bullhorn"></i>
+        <h4>Digital Marketing</h4>
+        <p>Boost your online presence with our innovative digital marketing strategies. Reach more customers with targeted campaigns.</p>
+      </div>
+      <!-- Service 3 -->
+      <div class="service-item">
+        <i class="fas fa-cogs"></i>
+        <h4>IT Consulting</h4>
+        <p>Our expert IT consultants help businesses optimize their technology to achieve greater efficiency and productivity.</p>
+      </div>
+      <!-- Service 4 -->
+      <div class="service-item">
+        <i class="fas fa-users-cog"></i>
+        <h4>Business Consulting</h4>
+        <p>Our business consultants provide strategic advice to help you grow and improve your business processes.</p>
+      </div>
+      <!-- Service 5 -->
+      <div class="service-item">
+        <i class="fas fa-share-alt"></i>
+        <h4>social media optimizing</h4>
+        <p>Transform your business with our socail media solution, offering scalability, reach, and flexibility.</p>
+      </div>
+      <!-- Service 6 -->
+      <div class="service-item">
+        <i class="fas fa-book-open"></i>
+        <h4>Product Catalog</h4>
+        <p>Make your digital catalog with our  services, ensuring your business stays safe online and easy to display to coustomer.</p>
+      </div>
+      <!-- Service 7 -->
+      <div class="service-item">
+        <i class="fas fa-chart-line"></i>
+        <h4>SEO Optimization</h4>
+        <p>Improve your website’s visibility and ranking with our SEO strategies, designed to drive more traffic and conversions.</p>
+      </div>
+      <!-- Service 8 -->
+      <div class="service-item">
+        <i class="fab fa-instagram"></i>
+        <h4> instagram Post </h4>
+        <p>Create innovative Insta post for your business that work seamlessly across all platforms and reach most customer .</p>
+      </div>
+      <!-- Service 9 -->
+      <div class="service-item">
+         <i class="fas fa-ad"></i>
+        <h4>Social media Advertisement </h4>
+        Efficient and scalable ad solutions to help you manage, reach, view, and gain followers.</p>
+    </div>
+      <!-- Service 10 -->
+      <div class="service-item">
+        <i class="fas fa-lock"></i>
+        <h4>Data Encryption</h4>
+        <p>Protect sensitive information with our encryption services, ensuring that your data remains secure from unauthorized access.</p>
+      </div>
+      <!-- Service 11 -->
+      <div class="service-item">
+        <i class="fas fa-headset"></i>
+        <h4>Customer Support</h4>
+        <p>Our dedicated customer support team is available to assist your clients with any issues, ensuring smooth operations.</p>
+      </div>
+      <!-- Service 12 -->
+      <div class="service-item">
+        <i class="fas fa-network-wired"></i>
+        <h4>Networking Services</h4>
+        <p>We design and implement reliable network solutions that help businesses optimize their connectivity and infrastructure.</p>
+      </div>
+      <!-- Service 13 -->
+      <div class="service-item">
+        <i class="fas fa-paint-brush"></i>
+        <h4>Graphic Design</h4>
+        <p>Create visually striking graphics, logos, and branding materials that represent your business and capture attention.</p>
+      </div>
+      <!-- Service 14 -->
+      <div class="service-item">
+        <i class="fas fa-video"></i>
+        <h4>Video Production</h4>
+        <p>Produce high-quality videos for marketing, training, or branding purposes to engage your audience effectively.</p>
+      </div>
+      <!-- Service 15 -->
+      <div class="service-item">
+        <i class="fas fa-file-alt"></i>
+        <h4>Content Writing</h4>
+        <p>Our expert writers craft compelling and informative content for blogs, websites, and marketing materials.</p>
+      </div>
+      <!-- Service 16 -->
+      <div class="service-item">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <h4>File Backup Services</h4>
+        <p>Ensure your critical data is backed up securely, with automatic and reliable file backup solutions.</p>
+      </div>
+      <!-- Service 17 -->
+      <div class="service-item">
+        <i class="fas fa-truck"></i>
+        <h4>Logistics & Supply Chain</h4>
+        <p>Streamline your operations and improve efficiency with our logistics and supply chain management services.</p>
+      </div>
+      <!-- Service 18 -->
+      <div class="service-item">
+        <i class="fas fa-balance-scale"></i>
+        <h4>Legal Consulting</h4>
+        <p>Get expert legal advice for your business to ensure compliance and protect your interests.</p>
+      </div>
+      <!-- Service 19 -->
+      <div class="service-item">
+        <i class="fas fa-handshake"></i>
+        <h4>Partnership & Networking</h4>
+        <p>We help businesses form strategic partnerships and expand their networks to boost growth and opportunities.</p>
+      </div>
+      <!-- Service 20 -->
+      <div class="service-item">
+        <i class="fas fa-people-carry"></i>
+        <h4>Human Resources Solutions</h4>
+        <p>Optimize your workforce management with our HR services, including recruitment, training, and employee relations.</p>
+      </div>
+    
+    <!-- Service 21 -->
+    <div class="service-item">
+        <i class="fas fa-chart-pie"></i>
+        <h4>Market Research</h4>
+        <p>Gather insights about your market, competitors, and customer needs with our thorough research services.</p>
+      </div>
+       <!-- Service 22 -->
+       <div class="service-item">
+        <i class="fas fa-pen-nib"></i>
+        <h4>Brand Identity Development</h4>
+        <p>We help you build a powerful brand identity with cohesive logos, colors, and messaging that stand out.</p>
+      </div>
+      <!-- Service 23 -->
+      <div class="service-item">
+        <i class="fas fa-calendar-check"></i>
+        <h4>Event Management</h4>
+        <p>Plan and execute your corporate events, product launches, or promotional activities with professional support.</p>
+      </div>
+      <!-- Service 24 -->
+      <div class="service-item">
+        <i class="fas fa-store"></i>
+        <h4>E-commerce Solutions</h4>
+        <p>Launch your online store with seamless e-commerce development and payment integration services.</p>
+      </div>
+      <!-- Service 25 -->
+      <div class="service-item">
+        <i class="fas fa-chart-pie"></i>
+        <h4>Market Research</h4>
+        <p>Gather insights about your market, competitors, and customer needs with our thorough research services.</p>
+      </div>
+      <!-- Service 26 -->
+      <div class="service-item">
+        <i class="fas fa-lightbulb"></i>
+        <h4>Innovation Strategy</h4>
+        <p>We guide your business through creative strategies and innovative solutions to stay ahead in the market.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MSA – Business Consultant and IT Services. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
