@@ -77,6 +77,27 @@
             color: white;
             margin-top: 40px;
         }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.15);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -93,7 +114,6 @@
           <li><a href="policies.html"><i class="fas fa-file-alt"></i> Policies</a></li>
           <li><a href="https://www.instagram.com/mohd_saad_amaan" target="_blank"><i class="fab fa-instagram"></i></a></li>
       </ul>
-      
       </nav>
     <div class="container">
         <h1>Website Policies</h1>
@@ -114,5 +134,15 @@
     <div class="footer">
         © 2025 MSA – Business Consultant and IT Services. All Rights Reserved.
     </div>
+    
+    <a href="https://wa.me/918700661340" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <script>
+        AOS.init({
+          duration: 1000,
+          once: true
+        });
+      </script>
 </body>
 </html>
